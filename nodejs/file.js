@@ -1,5 +1,7 @@
 const fs=require("fs") //built in
 
+const os=require("os");
+console.log(os.cpus().length)
 // sync call
 //fs.writeFileSync('./test.txt', "Hey There");
 
@@ -18,8 +20,23 @@ const fs=require("fs") //built in
 
 //fs.appendFileSync("./test.txt", new Date().getDate().toLocaleString());
 
-fs.appendFileSync("./test.txt",`${Date.now()} Hey There\n`);
+// fs.appendFileSync("./test.txt",`${Date.now()} Hey There\n`);
 
-fs.cpSync('./test.txt', './copy.txt'); //copying file
-fs.unlinkSync("copy.txt");  //delete file
-console.log(fs.statSync("./test.txt"));
+// fs.cpSync('./test.txt', './copy.txt'); //copying file
+// fs.unlinkSync("copy.txt");  //delete file
+// console.log(fs.statSync("./test.txt"));
+
+console.log("1");
+//Blocking
+// const result=fs.readFileSync('contacts.txt','utf-8');
+//     console.log(result);
+
+//Non Blocking
+fs.readFile('contacts.txt','utf-8',(err,result)=>{
+    console.log(result);
+});
+
+    console.log("2");
+
+    //defalut thread pool size =4
+    // max? 8 crore cpu -8
