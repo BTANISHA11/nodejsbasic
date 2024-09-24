@@ -1,31 +1,54 @@
-const {shortid} = require("shortid");
-const URL = require('../models/url')
-async function handleGenerateNewShortURL(req , res){
-    const shortID = nanoid(8);
+const shortid = require('shortid');
+const URL = require('../models/url');
+
+async function handleGenerateNewShortURL(req, res) {
     const body = req.body;
-    // console.log(shortID);
-
-    if(!body.url) return  res.status(400).json({error : 'url is required'});
-
+    if (!body.url) {
+        return res.status(400).send({error: 'URL is missing'});
+    }
+    const shortID = shortid();
     await URL.create({
-        shortId : shortID,
-        redirectURL : body.url,
-        visitHistory : []
-   });
-
-    return res.json({id : shortID})
-}
-
-async function handleGetAnalytics(req , res){
-    const shortId = req.params.shortId;
-    const result = await URL.findOne({ shortId : shortId })
-    return res.json({ 
-        totalClicks: result.visitHistory.length,
-        analytics: result.visitHistory,
+        shortID: shortID,
+        redirectURL: body.url,
+        visitHistory: [],
+    });
+    // return res.json({shortID: shortID});
+    return res.render("index", {
+        id: shortID,
     })
 }
 
+async function handleRedirectNewShortURL(req, res) {
+    const shortID = req.params.shortID;
+    const entry = await URL.findOneAndUpdate({
+        shortID,
+    }, {
+        $push: {
+            visitHistory: {
+                timestamp: Date.now()
+            },
+        }
+    });
+
+    if (!entry || !entry.redirectURL) {
+        return res.status(404).send({error: 'URL not found'});
+    }
+
+    res.redirect(entry.redirectURL);
+}
+
+async function handleAnalyticsURL(req, res) {
+    const shortID = req.params.shortID;
+    const result = await URL.findOne({shortID});
+    return res.json({
+        totalClicks: result.visitHistory.length,
+        analytics: result.visitHistory
+    });
+}
+
+
 module.exports = {
     handleGenerateNewShortURL,
-    handleGetAnalytics
-}
+    handleRedirectNewShortURL,
+    handleAnalyticsURL
+};
