@@ -32,3 +32,62 @@ Node js
    2. Action - CRUD
    3. Resource identifier - id
    4. HTTP method - get, post, put, patch, delete
+
+   https://www.mockaroo.com/  -- fake data api
+   work with json
+
+   server is hybrid should support
+
+   postman - utility tool for cleaning , testing
+
+http header --  request and response
+middleware - client request go to middleware first do processing if not good return even end this cycle of return response 
+multiple one can be also there 
+can execute any code , make changes to request and response objects , end cycle , call next middleware func in stack
+
+# http headers
+headers- original data in packete extra info out mam is client info is headers
+http headrs are imp part of api request and response as they represnt meta data associated with api req and res.
+carry info for the req and res body
+
+# Status codes
+ 404 not found
+100-199 --- informational responses
+200-299 --- success res
+300-399 --- redirct res msg
+400-499 --- client error
+500-599 --- server error
+ 201-- created
+ 202-- accepted
+ 203 -- non authoratative info
+ 204-no content
+ 205-reset content
+ 206 -- partial content
+ 400- bad request
+ 401- unauthorized
+
+ nodemon for starting server by itself
+
+ # Mongodb
+ no sql document based database
+ strong support for aggregation pipes
+ works for bson format
+ best for node app
+
+ mongosh to activate
+ commands: 
+ show dbs
+ use <db_name>
+ show collections
+ db.coll.find()
+ db.coll.insert()
+
+ # FInally MVC
+ comtroller - manipulate model
+ model - update view
+ user calls route -- route calls controller -- controller change model
+
+ for server side rendering problems
+ ejs ,  pug , handlebars
+ejs makes server side rendering easy
+
