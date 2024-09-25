@@ -29,6 +29,5 @@ client.on('interactionCreate', interaction => {
     interaction.reply("Pong!").catch(console.error);
 });
 
-client.login('MTI4ODUyMzEwNzEwMzE0NjA2NA.GANhyX.HfoUZK1w94QBDH1yKGP-st_URdrhqiCaTn69vk'); // Ensure you replace 'YOUR_BOT_TOKEN' with your actual bot token
+client.login('bot token'); // Ensure you replace 'YOUR_BOT_TOKEN' with your actual bot token
 
-//MTI4ODUyMzEwNzEwMzE0NjA2NA.GvvUmQ.UQaqPUkAEkh7LhFo4QKbf0LuyaCnA84Xj6wxoc
