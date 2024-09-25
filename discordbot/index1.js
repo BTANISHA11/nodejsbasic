@@ -30,4 +30,3 @@ client.on('interactionCreate', interaction => {
 });
 
 client.login('your bot token'); 
-
