@@ -128,3 +128,6 @@ authtication means a user belong to this appplication
 
 # Authorization
 Authorization is the process of giving someone the ability to access a resource.
+
+# Discord bot
+intent means what permission giivng to bot
