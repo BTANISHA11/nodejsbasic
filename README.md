@@ -91,3 +91,40 @@ carry info for the req and res body
  ejs ,  pug , handlebars
 ejs makes server side rendering easy
 
+# Node js authetication from scratch
+authentication 2 patterns
+statefull-- which maintains state or data or server side
+stateless -which has no state
+state- basically data jiske saath map krte h kcuh maintain krne ke lia
+
+how to transfer uid?
+using cookies , response, headers
+
+express flow-- client -- auth middleware(checks for cookie value or uid if valid caals next() else rejects the request) -- endpoint route
+
+# jwt autheication
+jwt - json web token
+
+stateful is memory intensive
+so therefore use stateless authetication for less memory 
+in token keep state
+keep the state in payload only -- follow csm architecture
+use jwt token for this
+data is basically stored in the form of token
+npm i jsonwebtoken
+
+# Cookies
+made by server
+uid token data rakhte h give it to user
+browser pe jaati h user se
+if cookie h then token ki value nikalenge
+cookies are domain specific
+cookies are path specific
+jo server jis domain ke lia cookies bnata h usi ke paas vapas jata h
+can keep expiry date
+bearer authorization use
+
+authtication means a user belong to this appplication
+
+# Authorization
+Authorization is the process of giving someone the ability to access a resource.
