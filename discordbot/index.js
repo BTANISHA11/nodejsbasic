@@ -29,5 +29,5 @@ client.on('interactionCreate', interaction => {
     interaction.reply("Pong!").catch(console.error);
 });
 
-client.login('bot token'); // Ensure you replace 'YOUR_BOT_TOKEN' with your actual bot token
+client.login('your bot token'); 
 
