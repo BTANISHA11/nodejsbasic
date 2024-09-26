@@ -131,3 +131,8 @@ Authorization is the process of giving someone the ability to access a resource.
 
 # Discord bot
 intent means what permission giivng to bot
+
+# blog app
+
+dev dependencies needed for dev part
+making partials folder ectra for common head , footer etc
