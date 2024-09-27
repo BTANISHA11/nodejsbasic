@@ -136,3 +136,28 @@ intent means what permission giivng to bot
 
 dev dependencies needed for dev part
 making partials folder ectra for common head , footer etc
+
+# Web Sockets
+WebSockets is a protocol that enables bidirectional, real-time communication between a client (usually a
+browser) and a server over the web.
+
+polling--- overkill here makes load heavy
+
+# Node Js Streams
+used to send files in chunks
+to make memory effi server
+as dats comes to user in chunks
+
+# scale node js module using cluster
+used when number of users are large
+
+# Nginx
+powerful web server uses a non threaded event driven architecture
+do load balancing , http caching, reverse proxy
+fwd proxy -- multiple clients go to server using vpn
+
+for eg-- /admin use server1
+/settings -- use server2
+
+Use Docker
+it is a type of virtualization tool
